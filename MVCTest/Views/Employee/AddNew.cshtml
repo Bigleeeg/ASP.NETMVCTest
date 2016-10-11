@@ -1,0 +1,29 @@
+﻿@using MVCTest.Models
+@model EmployeeModel
+@{
+    ViewBag.Title = "AddNew";
+}
+@Styles.Render("~/Content/Site.css")
+
+<h2>AddNew</h2>
+
+@using (Html.BeginForm("SaveEmployee", "Employee"))
+{
+    <table>
+        <tr>
+            <td>Employee Name:</td>
+            <td>@Html.EditorFor(o => o.Name)</td> 
+        </tr>
+        <tr>
+            <td>Employee Info:</td>
+            <td>@Html.EditorFor(o => o.Info)</td>
+        </tr>
+        <tr>
+            <td>Employee Salary:</td>
+            <td>@Html.EditorFor(o => o.Salary)</td>
+        </tr>
+    </table>
+    <br />
+    <input type="submit" name="BtnSubmit" value="Save" />
+    <input type="submit" name="BtnSubmit" value="Cancel" />
+}

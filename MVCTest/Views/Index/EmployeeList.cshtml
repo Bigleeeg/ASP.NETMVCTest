@@ -1,0 +1,33 @@
+﻿@using MVCTest.Models
+@{
+    ViewBag.Title = "EmployeeList";
+    List<EmployeeViewModel> emvList = (List<EmployeeViewModel>)ViewData["employeeModel"];
+}
+@Styles.Render("~/Content/Site.css")
+
+<h2>EmployeeList</h2>
+<div>
+    <a href="/Employee/AddNew">Add New</a>
+    <br />
+    <table style="border:1px">
+        <tr>
+            <td>Employee Name</td>
+            <td>Employee Info</td>
+            <td>Employee Salary</td>
+        </tr>
+        @foreach (EmployeeViewModel evm in emvList)
+            {
+            <tr>
+                <td>@evm.EmployeeName</td>
+                <td>@evm.EmployeeInfo</td>
+                <td>
+                    <span style="background-color:@evm.SalaryColor">@evm.Salary.ToString("C")</span>
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+
+

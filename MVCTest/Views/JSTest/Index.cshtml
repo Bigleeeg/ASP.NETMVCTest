@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+<script> 
+
+    /* 1 局部变量的累加 */ 
+    //function countFn() { 
+    //    var count = 1;
+    //    return function () {
+    //        count++;
+    //        console.log(count);
+    //    } 
+    //}
+
+    //var y = countFn();
+    //y();
+    //y();
+    //y = null;
+    //y();
+
+    /* 2 循环中使用闭包 */
+    //for (var i = 0; i < 10; i++) {
+    //    var a = function () {
+    //        console.log(i);
+    //    } 
+    //    a(); 
+    //}
+
+    for (var i = 0; i < 10; i++) {
+        var a = function (e) {
+            return function () {
+
+                console.log(e);
+            }
+        }
+        setTimeout(a(i), 3000);
+    }
+
+</script>
+
+
+
